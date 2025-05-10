@@ -1,0 +1,73 @@
+<html>
+<head>
+<script>
+function showUser(str) {
+  if (str == "") {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "appointdls.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
+
+<style>
+  body {
+    background-image: url('every.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  h3 {
+    font-size: 3rem;
+    color: black;
+    text-align: center;
+    margin-top: 50px;
+    font-weight: bolder;
+  }
+
+  form {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  input[type="date"] {
+    padding: 10px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 2px solid #6f42c1;
+    outline: none;
+    margin-top: 20px;
+  }
+
+  #txtHint {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+    color: #6f42c1;
+  }
+</style>
+
+</head>
+<body>
+
+<form>
+  <h3>Select a Date to View Appointment Info</h3>
+  <input type="date" name="status" onchange="showUser(this.value)">
+</form>
+
+<div id="txtHint">
+  <b><h3>Appointment info will be listed here...</h3></b>
+</div>
+
+</body>
+</html>

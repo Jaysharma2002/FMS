@@ -1,0 +1,91 @@
+<html></html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="pay.css">
+    <title>Payment form</title>
+    <script>
+        function func() {
+            var u = document.myForm.first_name.value;
+            var p = document.myForm.p_date.value;
+            var pm = document.myForm.p_mode.value;
+            var pa = document.myForm.p_amt.value;
+
+            if (u == "") {
+                alert("Name cannot be blank");
+                return false;
+            } else if (p == "") {
+                alert("Enter Date");
+                return false;
+            } else if (pm == "") {
+                alert("Please select payment mode");
+                return false;
+            } else if (pa == "") {
+                alert("Please enter payment amount");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body style="background-image:url(payment.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    <nav>
+        <div id="menu">
+            <ul>
+                <h3>
+                    <li><a href="home_page.html">Home</a></li>
+                    <li>|</li>
+                    <li><a href="user_login.html">Login</a></li>
+                    <li>|</li>
+                    <li><a href="appointment.html">Appointment</a></li>
+                    <li>|</li>
+                    <li><a href="about.html">About</a></li>
+                    <li>|</li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li>|</li>
+                    <li><a href="logout.php" class="btn btn-info btn-lg">
+                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                    </a></li>
+                </h3>
+            </ul>
+        </div>
+    </nav>
+
+    <h4 style="text-align:center;color:blue;padding-top:80px;font-size:30px;">Confirm Your Payment</h4>
+    <form name="myForm" method="post" action="payment.php" autocomplete="off" onsubmit="return func()">
+        <div class="container">
+            <label class="item">Enter name</label>
+            <input type="text" name="first_name" pattern="[a-zA-Z]+" required><br><br>
+
+            <label class="item">Enter Payment date</label>
+            <input type="date" name="p_date" required><br><br>
+
+            <label class="item">Choose Payment mode:</label>
+            <select id="payment" name="p_mode" required>
+                <option value="">--Select Payment Mode--</option>
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+            </select><br><br>
+
+            <label class="item">Amount</label>
+            <input type="number" name="p_amt" required><br><br>
+            <label class="item">Recipent</label>
+            <select name="mname" id="mname" style="padding:10px;margin-top:10px;">
+                <option value="Amit">Amit Mishra(Dietritian)</option>
+                <option value="Neha">Neha Shinde(Gym Trainer)</option>
+                <option value="Shanaya" selected>Shanaya Shetty(Yoga teacher)</option>
+                <option value="Shawn">Shawn Roy(Yoga Teacher)</option>
+                <option value="Khushi">Khushi Gandhi(Zumba Instructor)</option>
+                <option value="Mehta">DR Mehta(Dermatologists)</option>
+                <option value="Patil">DR Patil(Therapists)</option>
+                <option value="Joshi" selected>Dr Joshi(Dietritian)</option>
+                <option value="Jacob">Dr Jacob(Paediatrician)</option>
+                <option value="Nayar">Dr Nayar(Therapist)</option>
+                </select><br><br>
+
+            <input type="submit" value="Submit"><br><br>
+        </div>
+    </form>
+</body>
+</html>

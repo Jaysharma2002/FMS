@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <style>
+        body {
+            background-image: url('pay1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            transition: box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px blueviolet;
+        }
+
+       
+
+        /* Adding a transition for smooth appearance */
+        
+    </style>
+    <script type="text/javascript">
+        function print(str) {
+            var ob = new XMLHttpRequest();
+            ob.open("GET", "paymentdls.php?q=" + encodeURIComponent(str), true); // Added '=' and 'encodeURIComponent'
+            ob.send();
+            
+            ob.onreadystatechange = function() {
+                if (ob.readyState == 4 && ob.status == 200) {
+                    var resultDiv = document.getElementById("i");
+                    resultDiv.innerHTML = ob.responseText;
+                    resultDiv.classList.add("visible"); // Add visible class to fade in result
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <h3><input type="text" name="dname" placeholder="Enter Name" oninput="print(this.value)"></h3>
+    <h3 style='font-size: 300%;'>Display Payment</h3>
+    <span id="i"></span>
+</body>
+</html>

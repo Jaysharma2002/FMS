@@ -1,0 +1,64 @@
+<html>
+      <head>
+	    <script>
+function func(){
+
+                      var u=document.myForm.user.value;
+                      var p=document.myForm.pass.value;
+                       if(u=="")
+                        {
+                            alert(" Name can not be blank");
+                            return false;
+
+                        }
+                        else if(p.length<4)
+                        {
+                           alert("Password length can not be less than 6 character");
+                           return false;
+
+                        }
+               }
+
+
+              </script>
+                <title> ADMINS LOGIN PAGE</title>
+                <link rel="stylesheet" href="login.css">
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Josefin+Sans:ital,wght@0,200;0,300;1,200&family=Nunito+Sans:wght@700&family=Oxygen&family=PT+Serif:ital@0;1&family=Patrick+Hand&family=Prompt:wght@300&family=Raleway:wght@300&family=Righteous&family=Rubik&family=Ubuntu:wght@300&family=Yuji+Boku&display=swap" rel="stylesheet">
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Josefin+Sans:ital,wght@0,200;0,300;1,200&family=Nunito+Sans:wght@700&family=Oxygen&family=PT+Serif:ital@0;1&family=Patrick+Hand&family=Prompt:wght@300&family=Raleway:wght@300&family=Righteous&family=Rubik&family=Ubuntu:wght@300;700&family=Yuji+Boku&display=swap" rel="stylesheet">
+        </head>
+        <body style="background-image:url(b1.avif); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="home_page.html">Home Page</a>
+      <a class="nav-item nav-link" href="payment.html">Payment</a>
+      <a class="nav-item nav-link" href="about.html">About</a>
+       <a href="logout.php" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span>Log out</a>
+    </div>
+  </div>
+</nav>
+                <div class="container">
+
+                       <form name="myForm" method="get" autocomplete="off" action="admin.php" onsubmit=" return func()">
+                               <div class="login">
+                                <h2>Admins Login</h2><br><br>
+                                <input type="text" name="user" placeholder="Enter your UserName"><br><br>
+				<input type="password" name="pass" placeholder="Enter your password"><br><br>
+                                <input type="submit" value="Login" id="login-button"><br>
+                              
+                                </div>
+                           </form>
+
+
+                </div>
+
+        </body>
+</html>
+~                                                                                                                      

@@ -1,0 +1,84 @@
+<html>
+        <head>
+        <title>Feedback Form</title>
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <style>
+	.navbar-expand-lg .navbar-collapse
+	{
+
+    	background-color: #0d6efd80;
+    	font-size: 25px;
+    	padding: 5px;
+    	font-family: cursive;
+	}
+  </style>
+	</head>
+	<body style="background-image:url(images.jpg); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+   <span class="navbar-toggler-icon"></span>
+   </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="home_page.html">Home Page</a>
+      <a class="nav-item nav-link" href="about.html">About</a>
+      <a class="nav-item nav-link" href="contact.html">Contact Us</a>
+      <a class="nav-item nav-link" href="appointment.html">Book Appointment</a>
+<a class="nav-item nav-link" href="payment.html">Payment</a>
+      <a href="logout.php" class="btn btn-info btn-lg">
+                   <span class="glyphicon glyphicon-log-out"></span> Log out
+                         </a>
+
+    </div>
+  </div>
+</nav> 
+		<div class="container mt-5">
+                        <h1>Your Feedback Is Important For Us</h1>
+                        <form class="row g-3"  autocomplete="off" method="get" action="feedback.php">
+                                <div class="col-md-6">
+					<label for="firstName" class="form-label"><font size="5" face="Verdana">First Name</font></label>
+                                <input type="text" class="form-control" id="firstName" name="fname" quired>
+                                </div>
+                                <div class="col-md-6">
+					<label for="lastName" class="form-label"><font size="5" face="Verdana">Last Name</font></label>
+                                 <input type="text" class="form-control" id="lastName" name="lname" required>
+                                </div>
+                                <div class="col-md-8">
+					<label for "emailInfo" class="form-label"><font size="5" face="Verdana">E-mail</font></label>
+                                        <input type="email" class="form-control" id="emailInfo"  name= "email" required>
+
+                                </div>
+                                <div class="col-md-4">
+					<label for"phoneNumber" class="form-label"><font size="5" face="Verdana">Phone No</font></label>
+                                        <input type="text" class="form-control" id="phoneNumber" name="phone">
+                                </div>
+                                <div class="col-md-4">
+                                <label class="form-label">Recipent</label>
+                                <select name="mname" id="mname" style="padding:10px;margin-top:10px;">
+                                        <option value="Amit">Amit Mishra(Dietritian)</option>
+                                        <option value="Neha">Neha Shinde(Gym Trainer)</option>
+                                        <option value="Shanaya" selected>Shanaya Shetty(Yoga teacher)</option>
+                                        <option value="Shawn">Shawn Roy(Yoga Teacher)</option>
+                                        <option value="Khushi">Khushi Gandhi(Zumba Instructor)</option>
+                                        <option value="Mehta">DR Mehta(Dermatologists)</option>
+                                        <option value="Patil">DR Patil(Therapists)</option>
+                                        <option value="Joshi" selected>Dr Joshi(Dietritian)</option>
+                                        <option value="Jacob">Dr Jacob(Paediatrician)</option>
+                                        <option value="Nayar">Dr Nayar(Therapist)</option>
+                                </select><br><br>
+                                </div>
+
+                                <div class="col-md-12">
+					<label for="comments" class="form-label"><font size="5" face="Verdana">Enter Your Feedback</font></label>
+                                        <textarea class="form-control" id="comments" rows="3" name="comment" required></textarea>
+                                </div>
+                                <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                        </form>
+
+                </div>
+        </body>
+</html>

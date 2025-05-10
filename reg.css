@@ -1,0 +1,126 @@
+.container
+{
+          display:flex;
+          background-color:white;
+          height: 675px;
+          width: 630px;
+          border-radius:100px;
+          flex-direction: column;
+          top: 18vh;
+          justify-content: center;
+          padding: 32px 10px 20px 10px;
+          align-items:center;
+          margin-left:400px;
+          margin-top:15px;
+	  border:3px solid black;
+
+}
+.section1 input[type="text"],.section1 input[type="password"]
+{
+        height:32px;
+        width:100%;
+        padding:15px;
+        border-radius:10px;
+	margin-top:10px;
+}
+
+.section1 input[type="date"]
+{
+        height:30px;
+        width:50%;
+
+}
+.section1 .item
+{
+font-family: 'Arial Black';
+font-size:15px;
+padding:5px;
+}
+.section1 .hist
+{
+        height:70px;
+
+}
+
+.section1 input[type="text"]:focus,.section1 input[type="password"]:focus
+{
+      outline: none;
+      border: 2px solid purple;
+      box-shadow: 0 0 5px #719ECE;
+      
+}
+.section1 .btn
+{
+
+        margin-left:100px;
+        margin-top:15px;
+        padding:12px;
+        border-radius:10px;
+        background-color:#800080b8;
+	height:auto;
+	width:90px
+}
+.section1 .btn:hover
+{
+        cursor:pointer;
+        background-color:purple;
+}
+body h4
+{
+  text-align:center;
+  font-family: 'Bebas Neue', cursive;
+  font-size:45px;
+  padding-top:10px;
+  padding-bottom:2px;
+  color:brown;
+  
+}
+#menu
+{
+   display:flex;
+   justify-content:space-between;
+   width:100%;
+   height:80px;
+   margin-top:0px;
+   margin-left:650px;
+
+}
+#menu ul li
+{
+  list-style:none;
+  display:inline;
+}
+#menu ul li a
+{
+  display:inline-block;
+  font-family:cursive;
+  text-transform:uppercase;
+  text-decoration:none;
+  background-color:inherit;
+  padding:10px 20px;
+  line-height:0px;
+  font-size:25px;
+  color:black;
+}
+#menu ul li a:hover{
+                color:blue;
+}
+.container .btn
+{
+
+        margin-left:100px;
+        margin-top:15px;
+        padding:12px;
+        border-radius:10px;
+        background-color:#800080b8;
+        height:auto;
+        width:90px
+}
+.container .btn:hover
+{
+        cursor:pointer;
+        background-color:purple;
+}
+             
+
+

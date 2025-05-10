@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Feedback</title>
+    <style>
+        body {
+            background-image: url('pay1.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            transition: box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px blueviolet;
+        }
+
+        span {
+            font-size: 25px;
+            color: blueviolet; /* Ensures the span text color matches your table color */
+        }
+
+        table {
+            color: blueviolet; /* Assuming you will have a table to display data */
+            margin: 20px auto; /* Centers the table */
+            width: 80%; /* Sets a width for the table */
+            border-collapse: collapse; /* Collapses borders for a cleaner look */
+        }
+
+        table, th, td {
+            border: 1px solid blueviolet; /* Table border styling */
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.1); /* Header background for contrast */
+        }
+
+    </style>
+    <script type="text/javascript">
+        function print(str) {
+            var ob = new XMLHttpRequest();
+            ob.open("GET", "feedbackdls.php?q=" + encodeURIComponent(str), true);
+            ob.send();
+            
+            ob.onreadystatechange = function() {
+                if (ob.readyState == 4 && ob.status == 200) {
+                    document.getElementById("i").innerHTML = ob.responseText;
+                }
+            };
+        }
+    </script>
+</head>
+<body>
+    <h3><input type="text" name="dname" placeholder="Enter Name" oninput="print(this.value)"></h3>
+    <h3 style='font-size: 300%;'>Display Feedback</h3>
+    <span id="i"></span>
+</body>
+</html>

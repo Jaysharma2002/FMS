@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333; /* Dark text for readability */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* Full height for vertical centering */
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #6f42c1; /* Purple color */
+        }
+
+        #intro {
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: white; /* White background for the form */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 50px 200px;
+            width: 400px; /* Fixed width for the form */
+            text-align: center;
+        }
+
+        fieldset {
+            border: none; /* Remove default border */
+        }
+
+        legend {
+            font-size: 1.8rem;
+            color: #495057; /* Dark gray color for the legend */
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px); /* Full width minus padding */
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #6f42c1; /* Purple border */
+            border-radius: 5px; /* Rounded input fields */
+            font-size: 1.2rem;
+            transition: border-color 0.3s; /* Smooth border transition */
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #007bff; /* Blue border on focus */
+        }
+
+        .item {
+            background-color: #6f42c1; /* Purple button */
+            color: white; /* White text for the button */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded button */
+            padding: 10px 20px; /* Button padding */
+            font-size: 1.5rem; /* Button font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+
+        .item:hover {
+            background-color: #5a32a3; /* Darker purple on hover */
+        }
+    </style>
+    <script>
+        function func() {
+            var m = document.myform.mass.value;
+            var w = document.myform.height.value;
+
+            if (m == "") {
+                alert("Mass cannot be blank");
+                return false;
+            }
+            if (w == "") {
+                alert("Height cannot be blank");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p id="intro">
+            <h2><b>Calculate your BMI (Body Mass Index)</b></h2>
+            <p>Enter your weight and height, then click the Calculate button to display your BMI result.</p>
+        </p>
+        <form name="myform" action="bmi1.php" method="get" onsubmit="return func()">
+            <fieldset>
+                <legend><b>Height and Weight</b></legend>
+                <h3><b>Mass in kilogram (kg):</b></h3>
+                <input type="text" name="mass" placeholder="Enter mass in kg">
+                <h3><b>Height in meter (m):</b></h3>
+                <input type="text" name="height" placeholder="Enter height in meters">
+                <h3>
+                    <input class="item" type="submit" name="submit" value="Calculate">
+                </h3>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

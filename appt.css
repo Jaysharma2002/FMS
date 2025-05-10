@@ -1,0 +1,79 @@
+body h1
+{
+        text-align:center;
+        padding-top:50px;
+        font-family: 'Ubuntu', sans-serif;
+        font-family: 'Prompt', sans-serif;
+        font-size:45px;
+        color:brown;
+}
+#dash
+{
+   margin-top:0px;
+}
+.container
+{
+    display:flex;
+    flex-direction: column;
+    top: 18vh;
+    justify-content: center;
+    align-items:center;
+    margin-top:10px;
+    
+}
+.item
+{
+        font-size:40px;
+        font-family:'Bold';
+        color:blue;
+}
+.container input[type="text"]
+{
+
+        padding:10px;
+        width:27%;
+        margin-top:-7px;
+        border-radius:10px;
+}
+
+.container #adate
+{
+        height:58px;
+        width:102px;
+        margin-top:-32px;
+
+
+}
+.container input[type="text"]:focus
+{
+        outline: none;
+        border: 2px solid blue;
+        box-shadow: 0 0 5px #719ECE;
+       
+}
+.navbar-expand-lg .navbar-collapse
+{
+
+    background-color: #0d6efd80;
+    font-size: 25px;
+    padding: 5px;
+    font-family: cursive;
+}
+.container .btn
+{
+
+        margin-left:3px;
+        margin-top:33px;
+        padding:12px;
+        border-radius:10px;
+        background-color:#800080b8;
+        height:auto;
+        width:90px
+}
+.container .btn:hover
+{
+
+        cursor:pointer;
+        background-color:purple;
+}
+

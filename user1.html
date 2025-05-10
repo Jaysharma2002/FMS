@@ -1,0 +1,41 @@
+<html>
+<head>
+<style>
+span
+{
+                font-size: 25px;
+}
+table
+{
+                color: blueviolet; ;
+}
+</style>
+
+<script type="text/javascript" >
+                function print()
+                {
+                                var ob=false;
+                                ob=new XMLHttpRequest();
+             
+                                ob.open("GET","user1.php?");
+                                ob.send();         
+             
+                                ob.onreadystatechange=function()
+                                {
+                                                if(ob.readyState==4 && ob.status==200)
+                                                {
+                                                                document.getElementById("i").innerHTML=ob.responseText;
+                                                }
+                                }
+                }           
+</script>
+</head>
+
+<body style="background-image:url(every.jpg);background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%">
+<center>
+<h3 style='font-size:300%;'>Display the contents of a user </h3>
+<br><input  type="button"  value=Display onclick="print()" >
+<span id="i" style="color:black"></span>
+</center>
+</body>
+</html>

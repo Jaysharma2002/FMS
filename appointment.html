@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="appt.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Josefin+Sans:ital,wght@0,200;0,300;1,200&family=Kalam:wght@700&family=Lobster&family=Nunito+Sans:wght@700&family=Oxygen&family=PT+Serif:ital@0;1&family=Patrick+Hand&family=Prompt:ital,wght@0,300;0,700;1,400&family=Raleway:wght@300&family=Righteous&family=Rubik&family=Ubuntu:wght@300&family=Yuji+Boku&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script>
+        function func() {
+            var name = document.myForm.name.value;
+            var age = document.myForm.age.value;
+            var height = document.myForm.height.value;
+            var weight = document.myForm.weight.value;
+            var phone = document.myForm.no.value;
+            var date = document.myForm.date.value;
+            var phonePattern = /^\d{10}$/;
+
+            if (age == "") {
+                alert("Age cannot be blank");
+                return false;
+            }
+            if (age <= 0) {
+                alert("Age cannot be negative");
+                return false;
+            }
+            if (name == "") {
+                alert("Name cannot be blank");
+                return false;
+            }
+            if (height == "") {
+                alert("Height cannot be blank");
+                return false;
+            }
+            if (height <= 0) {
+                alert("Height cannot be negative");
+                return false;
+            }
+            if (weight == "") {
+                alert("Weight cannot be blank");
+                return false;
+            }
+            if (weight <= 0) {
+                alert("Weight cannot be negative");
+                return false;
+            }
+            if (date == "") {
+                alert("Date cannot be blank");
+                return false;
+            }
+            if (!phone.match(phonePattern)) {
+                alert("Phone number must be exactly 10 digits");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body style="background-image:url(b1.avif); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="home_page.html">Home Page</a>
+                <a class="nav-item nav-link" href="about.html">About</a>
+                <a class="nav-item nav-link" href="feedback.html">Feedback</a>
+                <a class="nav-item nav-link" href="payment.html">Payment</a>
+                <a href="logout.php" class="btn btn-info btn-lg">Log out</a>
+            </div>
+        </div>
+    </nav>
+    <h4 style="text-align:center; padding-top:3px;">BOOK APPOINTMENT</h4>
+    <form name="myForm" method="get" action="aap1.php" autocomplete="off" onsubmit="return func()">
+        <div class="container">
+            <input type="text" name="age" placeholder="Enter your age"><br><br>
+            <input type="text" name="height" placeholder="Enter your height in meters"><br><br>
+            <input type="text" name="weight" placeholder="Enter your weight in kg"><br><br>
+            <input type="text" name="no" placeholder="Enter your Contact Number"><br><br>
+            <p style="font-size:20px;">Date of Appointment</p>
+            <input type="date" name="date" style="padding:10px;margin-bottom:0px;"><br><br>
+            <p style="font-size:20px;">Choose a doctor</p><br><br>
+            <select name="Doctor" id="Doctor" style="padding:10px;margin-top:-50px;">
+                <option value="101">DR Mehta (Dermatologists)</option>
+                <option value="102">DR Patil (Therapists)</option>
+                <option value="103" selected>Dr Joshi (Dietitian)</option>                            
+                <option value="104">Dr Nayar (Therapist)</option>
+            </select>
+            <label for="Trainer" style="font-size:20px;">Choose a Trainer:</label>
+            <select name="Trainer" id="Trainer" style="padding:10px;margin-top:10px;">
+                <option value="101">Amit Mishra (Dietitian)</option>
+                <option value="102">Neha Shinde (Gym Trainer)</option>
+                <option value="103" selected>Shanaya Shetty (Yoga teacher)</option>
+                <option value="104">Shawn Roy (Yoga Teacher)</option>
+                <option value="105">Khushi Gandhi (Zumba Instructor)</option>
+            </select>
+            <center>
+                <input class="btn btn-primary" type="submit" value="Submit">
+                <span id="i"></span>  
+            </center>
+        </div>
+    </form>
+</body>
+</html>

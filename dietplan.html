@@ -1,0 +1,78 @@
+<html>
+        <script>
+function func()
+{
+        var d=document.myForm.diet_id.value;
+        var did=document.myForm.doc_id.value;
+        var dn=document.myForm.diet_name.value;
+        var dt=document.myForm.diet_type.value;
+        var m=document.myForm.morning_diet.value;
+        var a=document.myForm.afternoon_diet.value;
+        var e=document.myForm.evening_diet.value;
+        if(d=="")
+        {
+                alert("ID can not be blank");
+                return false;
+        }
+        if(did=="")
+                        {
+                                                alert("Enter doctor ID can not be blank");
+                                                return false;
+                                        }
+        if(dn=="")
+                        {
+                                                alert("Diet name can not be blank");
+                                                return false;
+                                        }
+        if(dt=="")
+                        {
+                                                alert("Diet type can not be blank");
+                                                return false;
+                                        }
+         if(m=="")
+                        {
+                                                alert("Can not be blank");
+                                                return false;
+                                        }
+        if(a=="")
+                        {
+                                                alert("Can not be blank");
+                                                return false;
+                                        }
+        if(e=="")
+                        {
+                                                alert("Can not be blank");
+                                                return false;
+                                        }
+
+
+}
+        </script>
+<form name="myForm" method="GET" onsubmit="func()" action="dietplan.php">
+	<header><h1><center>DIET PLAN DETAILS</h1></header>
+<body style="background-image:url(diet.jpg); background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+<hr>
+<center>
+<label>User Id</label>
+<input type="text" name="uid"><br><br>
+<label>Diet Code</label>
+<input type="text" name="diet_code"><br><br>
+<label>Diet name</label>
+<input type="text" name="diet_name" pattern="[a-zA-Z].{1,}"><br><br>
+
+<label>Diet type</label>
+<input type="text" name="diet_type" pattern="[a-zA-Z].{1,}"><br><br>
+<label> Morning Diet </label>
+<input type="text" name="morning_diet" ><br><br>
+<label>Afternoon Diet</label>
+<input type="text" name="afternoon_diet" ><br><br>
+<label>Evening Diet</label>
+<input type="text" name="evening_diet" ><br><br>
+<br>
+<label>Diet plan Charge</label>
+<input type="text" name="cost"><br><br>
+<input type="submit" value="ADD DIET"><br><br>
+</center>
+	</form> 
+</body>
+</html>

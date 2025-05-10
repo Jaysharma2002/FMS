@@ -1,0 +1,109 @@
+<html>
+        <head>
+                <title>Registration Form</title>
+                <link rel="stylesheet" href="reg.css">
+                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Josefin+Sans:ital,wght@0,200;0,300;1,200&family=Nunito+Sans:wght@700&family=Oxygen&family=PT+Serif:ital@0;1&family=Patrick+Hand&family=Prompt:ital,wght@0,300;1,400&family=Raleway:wght@300&family=Righteous&family=Rubik&family=Ubuntu:wght@300;700&family=Yuji+Boku&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&family=Josefin+Sans:ital,wght@0,200;0,300;1,200&family=Kalam:wght@700&family=Nunito+Sans:wght@700&family=Oxygen&family=PT+Serif:ital@0;1&family=Patrick+Hand&family=Prompt:ital,wght@0,300;0,700;1,400&family=Raleway:wght@300&family=Righteous&family=Rubik&family=Ubuntu:wght@300&family=Yuji+Boku&display=swap" rel="stylesheet">
+            <script>
+function validate(){
+        var f=document.myForm.fname.value;
+        var m=document.myForm.mname.value;
+        var l=document.myForm.lname.value;
+        var g=document.myForm.gender.value;
+        var c=document.myForm.city.value;
+        var p=document.myForm.phone.value;
+        var a=document.myForm.address.value;
+        var h=document.myForm.mhist.value;
+        var ps=document.myForm.pass.value;
+        var cc=/^\d{10}$/;
+        if(f=="")
+        {
+                alert("First Name can not be blank");
+                return false;
+        }
+	if(a=="")
+	{
+	   alert("Address cannot be blanked");
+	   return false;
+
+         }
+       if(m=="")
+        {
+            alert("Middle Name can not be blank");
+            return false;
+                                        
+	}
+        if(l=="")
+         {
+            alert("Last  Name can not be blank");
+            return false;
+         }
+          if(g=="")
+           {
+             alert("  Please  enter gender");
+             return false;
+           }
+         if(c=="")
+           {
+              alert("  Please  enter city");
+              return false;
+           }
+          if(!p.match(cc))
+           {
+                alert("Phone number cannot be more than 10 digit ");
+                return false;
+            }
+        if(h=="")
+	 {
+            alert("History can not be blank");
+            return false;
+         }
+        if(ps.length<3)
+        {
+                alert("Password length can not be less than 6 character");
+                return false;
+        }
+ }
+        </script>
+
+
+	</head>
+        <body style="background-image:url(b1.avif); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;"> 
+
+		<nav>
+                        <div id="menu">
+                                <center>                 
+                                        <ul><h3>
+                                                <li><a href="home_page.html">Home</a></li><li>|<li>
+                                                <li><a href="user_login.html">Login</a></li><li>|</li>
+                                                <li><a href="about.html">About</a></li><li>|</li>
+                                        </h3></ul>
+                                </center>                                                                                                                                                                   
+                        </div>
+
+                </nav>
+		<div class="container">
+                <form  name="myForm"  autocomplete="off" method="get"  action="reg.php"  onsubmit="return validate()">
+                 <div class="section1">
+			 
+                         <input type="text" name="fname" placeholder="Enter Your First Name"><br><br>
+                         <input type="text" name="mname" placeholder="Enter Your Middle Name"><br><br>
+                         <input type="text" name="lname" placeholder="Enter Your Last Name"><br><br>
+                         <label class="item">Gender</label>
+                                                          <input type="radio" name="gender" value="male">Male
+                                                           <input type="radio" name="gender" value="female">Female
+                                                           <input type="radio" name="gender" value="other">Other<br><br>
+							   <input type="text" name="city" placeholder="Enter Your City"><br><br>
+                                                           <label class="item">Address</label> <textarea  class="hist" name="address"></textarea><br><br>
+                                                           <input type="text" name="phone" placeholder="Enter Your Phone Number"><br><br>
+                                                           <input type="password" name="pass" placeholder="Enter Your Password"><br><br>
+                                                          <label class="item"> Medical History </label>   <textarea  class="hist" name="mhist"></textarea><br><br>
+                                                         <input class="btn btn-primary" type="submit" name="Submit">
+
+
+
+
+
+                </form>
+        </body>
+</html>
